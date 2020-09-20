@@ -1,25 +1,25 @@
 import POPDataSource
 
-protocol ___VARIABLE_sceneName___ViewProtocol: ViewModelOutput {
-    
-    func dataDidUpdate(_ dataSources: [TableViewDataSource])
+protocol ___VARIABLE_productName___ViewProtocol: ViewModelOutput {
+
+    func dataDidUpdate()
+    func configureDataSource(_ dataSources: [TableViewDataSource])
 }
 
-protocol ___VARIABLE_sceneName___ViewModelProtocol: ViewControllerOutput {
+protocol ___VARIABLE_productName___ViewModelProtocol: ViewControllerOutput {
 
 }
 
-class ___VARIABLE_sceneName___ViewModel {
+class ___VARIABLE_productName___ViewModel {
 
-    struct Dependencies {
-    }
+    struct Dependencies { }
 
     let dp: Dependencies
     
     let moduleInput: ModuleInput
     var moduleOutput: ModuleOutput?
     
-    weak var view: ___VARIABLE_sceneName___ViewProtocol!
+    weak var view: ___VARIABLE_productName___ViewProtocol!
 
     init(dependencies: Dependencies, data: ModuleInput) {
         self.dp = dependencies
@@ -33,14 +33,15 @@ class ___VARIABLE_sceneName___ViewModel {
     }
 
     func updateData() {
+        
         let dataSources: [TableViewDataSource] = []
-        view.dataDidUpdate(dataSources)
+        view.configureDataSource(dataSources)
     }
 }
 
-// MARK: - ___VARIABLE_sceneName___ViewControllerOutput
-extension ___VARIABLE_sceneName___ViewModel: ___VARIABLE_sceneName___ViewModelProtocol {
-
+// MARK: - ___VARIABLE_productName___ViewControllerOutput
+extension ___VARIABLE_productName___ViewModel: ___VARIABLE_productName___ViewModelProtocol {
+    
     func change(lifeCycle: LifeCycle) {
         switch lifeCycle {
         case .didLoad:

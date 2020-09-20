@@ -1,6 +1,6 @@
 import Foundation
 
-extension ___VARIABLE_sceneName___ViewModel {
+extension ___VARIABLE_productName___ViewModel {
 
     enum OutputAction {
 

@@ -1,8 +1,8 @@
 import POPDataSource
 
-class ___VARIABLE_sceneName___ViewController: UIViewController {
-
-    var vm: ___VARIABLE_sceneName___ViewModelProtocol!
+class ___VARIABLE_productName___ViewController: UIViewController {
+    
+    var vm: ___VARIABLE_productName___ViewModelProtocol!
     
     @IBOutlet private weak var tableView: UITableView!
 
@@ -15,7 +15,7 @@ class ___VARIABLE_sceneName___ViewController: UIViewController {
     }
     
     // MARK: - View lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -49,14 +49,18 @@ class ___VARIABLE_sceneName___ViewController: UIViewController {
     // MARK: - Private
 
     private func configureUI() {
-     
+
     }
 }
 
-// MARK: - Private ___VARIABLE_sceneName___ViewModelOutput
-extension ___VARIABLE_sceneName___ViewController: ___VARIABLE_sceneName___ViewProtocol {
+// MARK: - Private ___VARIABLE_productName___ViewModelOutput
+extension ___VARIABLE_productName___ViewController: ___VARIABLE_productName___ViewProtocol {
 
-    func dataDidUpdate(_ dataSources: [TableViewDataSource]) {
+    func dataDidUpdate() {
+        tableView.reloadData()
+    }
+    
+    func configureDataSource(_ dataSources: [TableViewDataSource]) {
         dataSourceShim = TableViewDataSourceShim(ComposedDataSource(dataSources))
     }
 }
