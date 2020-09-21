@@ -4,7 +4,7 @@ import PromiseKit
 struct ___VARIABLE_productName___Repository: Repository, Syncable {
 
     let remote: RemoteStoreCodable<___VARIABLE_productName___>
-    let local: LocalStoreRealm<___VARIABLE_productName___>
+    let local: LocalStoreDataBase<___VARIABLE_productName___>
 
     func load() -> Promise<___VARIABLE_productName___> {
         firstly {

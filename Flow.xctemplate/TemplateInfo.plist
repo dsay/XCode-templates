@@ -58,7 +58,7 @@
 			<key>Values</key>
 			<array>
 				<string>StroreOnDisk</string>
-				<string>Realm</string>
+				<string>DataBase</string>
 				<string>NotStored</string>
 			</array>
 			<key>RequiredOptions</key>
