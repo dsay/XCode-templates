@@ -46,13 +46,24 @@
 		</dict>
 		<dict>
 			<key>Identifier</key>
-			<string>generateXIBfile</string>
+			<string>containerType</string>
+			<key>Required</key>
+			<true/>
 			<key>Name</key>
-			<string>Also create a TableView</string>
+			<string>Container type:</string>
 			<key>Description</key>
-			<string>Whether to create a TableView inside ViewController</string>
+			<string>The type of container to use</string>
 			<key>Type</key>
-			<string>checkbox</string>
+			<string>popup</string>
+			<key>Default</key>
+			<string>None</string>
+			<key>Values</key>
+			<array>
+				<string>None</string>
+				<string>TableView</string>
+				<string>StackView</string>
+				<string>PageController</string>
+			</array>
 			<key>RequiredOptions</key>
 			<dict>
 				<key>viewType</key>
