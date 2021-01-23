@@ -1,6 +1,6 @@
 import UIKit
 
-class ___VARIABLE_productName___View: UIView {
+class ___VARIABLE_productName___StackView: UIView {
 
     @Layout var vertical = UIStackView()
     @Layout var scrollView = UIScrollView()

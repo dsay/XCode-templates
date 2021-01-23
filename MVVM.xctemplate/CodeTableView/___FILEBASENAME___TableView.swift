@@ -1,6 +1,6 @@
 import UIKit
 
-class ___VARIABLE_productName___View: UIView {
+class ___VARIABLE_productName___TableView: UIView {
 
     @Layout var tableView = UITableView()
     

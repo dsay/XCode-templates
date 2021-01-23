@@ -1,13 +1,13 @@
 import UIKit
 
-class ___VARIABLE_productName___StackViewController: UIViewController {
+class ___VARIABLE_productName___StackController: UIViewController {
 
-    lazy var customView: ___VARIABLE_productName___View = {
-        let customView = ___VARIABLE_productName___View(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
+    lazy var customView: ___VARIABLE_productName___StackView = {
+        let customView = ___VARIABLE_productName___StackView(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
         return customView
     }()
     
-    var viewModel: ___VARIABLE_productName___ViewModelProtocol!
+    var viewModel: ___VARIABLE_productName___StackViewModelProtocol!
     
     // MARK: - View lifecycle
 
@@ -52,8 +52,8 @@ class ___VARIABLE_productName___StackViewController: UIViewController {
     }
 }
 
-// MARK: - Private ___VARIABLE_productName___ViewModelOutput
-extension ___VARIABLE_productName___StackViewController: ___VARIABLE_productName___ViewProtocol {
+// MARK: - Private ___VARIABLE_productName___StackViewModelOutput
+extension ___VARIABLE_productName___StackController: ___VARIABLE_productName___StackViewProtocol {
 
     func configure(_ views: [UIView]) {
         customView.vertical.addToVerticalStack(views)

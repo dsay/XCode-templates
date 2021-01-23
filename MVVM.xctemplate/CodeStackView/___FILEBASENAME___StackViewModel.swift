@@ -1,15 +1,16 @@
-import Foundation
+import UIKit
 
-protocol ___VARIABLE_productName___ViewProtocol: ViewModelOutput {
+protocol ___VARIABLE_productName___StackViewProtocol: ViewModelOutput {
 
+    func configure(_ views: [UIView])
     func dataDidUpdate()
 }
 
-protocol ___VARIABLE_productName___ViewModelProtocol: ViewControllerOutput {
+protocol ___VARIABLE_productName___StackViewModelProtocol: ViewControllerOutput {
 
 }
 
-class ___VARIABLE_productName___ViewModel {
+class ___VARIABLE_productName___StackViewModel {
 
     struct Dependencies { }
 
@@ -18,7 +19,7 @@ class ___VARIABLE_productName___ViewModel {
     let moduleInput: ModuleInput
     var moduleOutput: ModuleOutput?
     
-    weak var view: ___VARIABLE_productName___ViewProtocol!
+    weak var view: ___VARIABLE_productName___StackViewProtocol!
 
     init(dependencies: Dependencies, data: ModuleInput) {
         self.dp = dependencies
@@ -32,12 +33,14 @@ class ___VARIABLE_productName___ViewModel {
     }
 
     func updateData() {
-        view.dataDidUpdate()
+        let screen: [UIView] = []
+
+        view.configure(screen)
     }
 }
 
-// MARK: - ___VARIABLE_productName___ViewControllerOutput
-extension ___VARIABLE_productName___ViewModel: ___VARIABLE_productName___ViewModelProtocol {
+// MARK: - ___VARIABLE_productName___StackViewControllerOutput
+extension ___VARIABLE_productName___StackViewModel: ___VARIABLE_productName___StackViewModelProtocol {
     
     func change(lifeCycle: LifeCycle) {
         switch lifeCycle {
