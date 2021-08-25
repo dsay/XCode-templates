@@ -28,6 +28,13 @@ class ___VARIABLE_productName___View: UIView {
     
     public func makeConstraints(vc: UIViewController) {
         NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: topAnchor),
+            scrollView.leftAnchor.constraint(equalTo: leftAnchor),
+            scrollView.rightAnchor.constraint(equalTo: rightAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
             vertical.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             vertical.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
             vertical.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
