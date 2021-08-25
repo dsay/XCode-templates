@@ -2,12 +2,12 @@ import POPDataSource
 
 class ___VARIABLE_productName___TableViewController: UIViewController {
 
-    lazy var customView: ___VARIABLE_productName___View = {
-        let customView = ___VARIABLE_productName___View(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
+    lazy var customView: ___VARIABLE_productName___TableView = {
+        let customView = ___VARIABLE_productName___TableView(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
         return customView
     }()
     
-    var viewModel: ___VARIABLE_productName___ViewModelProtocol!
+    var viewModel: ___VARIABLE_productName___TableViewModelProtocol!
     
     private var dataSourceShim: TableViewDataSourceShim? = nil {
         didSet {
@@ -60,8 +60,8 @@ class ___VARIABLE_productName___TableViewController: UIViewController {
     }
 }
 
-// MARK: - Private ___VARIABLE_productName___ViewModelOutput
-extension ___VARIABLE_productName___TableViewController: ___VARIABLE_productName___ViewProtocol {
+// MARK: - Private ___VARIABLE_productName___TableViewModelOutput
+extension ___VARIABLE_productName___TableViewController: ___VARIABLE_productName___TableViewProtocol {
 
     func dataDidUpdate() {
         customView.tableView.reloadData()

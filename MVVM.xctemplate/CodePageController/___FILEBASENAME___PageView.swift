@@ -1,6 +1,6 @@
 import UIKit
 
-class ___VARIABLE_productName___View: UIView {
+class ___VARIABLE_productName___PageView: UIView {
 
     @Layout var segmentControl = UISegmentedControl()
     @Layout var container = UIView()

@@ -1,16 +1,15 @@
-import UIKit
+import Foundation
 
-protocol ___VARIABLE_productName___ViewProtocol: ViewModelOutput {
+protocol ___VARIABLE_productName___PageViewProtocol: ViewModelOutput {
 
-    func configure(_ views: [UIView])
     func dataDidUpdate()
 }
 
-protocol ___VARIABLE_productName___ViewModelProtocol: ViewControllerOutput {
+protocol ___VARIABLE_productName___PageViewModelProtocol: ViewControllerOutput {
 
 }
 
-class ___VARIABLE_productName___ViewModel {
+class ___VARIABLE_productName___PageViewModel {
 
     struct Dependencies { }
 
@@ -19,7 +18,7 @@ class ___VARIABLE_productName___ViewModel {
     let moduleInput: ModuleInput
     var moduleOutput: ModuleOutput?
     
-    weak var view: ___VARIABLE_productName___ViewProtocol!
+    weak var view: ___VARIABLE_productName___PageViewProtocol!
 
     init(dependencies: Dependencies, data: ModuleInput) {
         self.dp = dependencies
@@ -33,14 +32,12 @@ class ___VARIABLE_productName___ViewModel {
     }
 
     func updateData() {
-        let screen: [UIView] = []
-
-        view.configure(screen)
+        view.dataDidUpdate()
     }
 }
 
-// MARK: - ___VARIABLE_productName___ViewControllerOutput
-extension ___VARIABLE_productName___ViewModel: ___VARIABLE_productName___ViewModelProtocol {
+// MARK: - ___VARIABLE_productName___PageViewControllerOutput
+extension ___VARIABLE_productName___PageViewModel: ___VARIABLE_productName___PageViewModelProtocol {
     
     func change(lifeCycle: LifeCycle) {
         switch lifeCycle {
