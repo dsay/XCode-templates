@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-protocol ___VARIABLE_productName:identifier___ViewModel: ViewModelBase {
+protocol ___VARIABLE_productName:identifier___ViewModel: MVVMViewModel {
     
 }
 

@@ -4,12 +4,16 @@ enum LifeCycle {
     case didLoad, didAppear, willAppear, didDisappear, willDisappear, didDeinit
 }
 
-protocol ViewControllerOutput: class {
+protocol ViewControllerOutput: AnyObject {
     
     func change(lifeCycle: LifeCycle)
 }
 
-protocol ViewModelOutput: class, NVActivityIndicatorViewable {
+protocol ViewModelOutput: ActivityObserver {
+
+}
+
+protocol ActivityObserver: AnyObject, NVActivityIndicatorViewable {
 
     func startActivity()
     func stopActivity()
@@ -24,7 +28,7 @@ extension ViewControllerOutput {
     }
 }
 
-extension ViewModelOutput where Self: UIViewController {
+extension ActivityObserver where Self: UIViewController {
 
     func startActivity() {
         startAnimating()

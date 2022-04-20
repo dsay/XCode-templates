@@ -3,13 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Kind</key>
-	<string>Xcode.IDEFoundation.TextSubstitutionFileTemplateKind</string>
-	<key>DefaultCompletionName</key>
-	<string>Coordinator</string>
-	<key>Description</key>
-	<string>Generation of a new Coordinator</string>
-	<key>Identifier</key>
-	<string>com.valtech.unit.module.SwiftCoordinator.iOS</string>
+	<string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
 	<key>Platforms</key>
 	<array>
 		<string>com.apple.platform.iphoneos</string>
@@ -17,16 +11,39 @@
 	<key>Options</key>
 	<array>
 		<dict>
-			<key>Description</key>
-			<string>The name of the module to create</string>
 			<key>Identifier</key>
 			<string>productName</string>
-			<key>Name</key>
-			<string>Module Name:</string>
 			<key>Required</key>
 			<true/>
+			<key>Name</key>
+			<string>Class:</string>
+			<key>Description</key>
+			<string>The name of the Coordinator</string>
 			<key>Type</key>
 			<string>text</string>
+			<key>Default</key>
+			<string>MyUset</string>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>viewType</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>Subclass of:</string>
+			<key>Description</key>
+			<string>The type of conteiner to use</string>
+			<key>Type</key>
+			<string>popup</string>
+			<key>Default</key>
+			<string>NavigationController</string>
+			<key>Values</key>
+			<array>
+				<string>TabBar</string>
+				<string>NavigationController</string>
+				<string>Window</string>
+				<string>ViewController</string>
+			</array>
 		</dict>
 	</array>
 </dict>
