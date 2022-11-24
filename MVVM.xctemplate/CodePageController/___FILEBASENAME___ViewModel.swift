@@ -1,24 +1,22 @@
 import Foundation
 
-protocol ___VARIABLE_productName___PageViewProtocol: ViewModelOutput {
+protocol ___VARIABLE_productName___ViewProtocol: ViewModelOutput {
 
     func dataDidUpdate()
 }
 
-protocol ___VARIABLE_productName___PageViewModelProtocol: ViewControllerOutput {
+protocol ___VARIABLE_productName___ViewModelProtocol: ViewControllerOutput {
 
 }
 
-class ___VARIABLE_productName___PageViewModel {
-
-    struct Dependencies { }
+class ___VARIABLE_productName___ViewModel {
 
     let dp: Dependencies
     
     let moduleInput: ModuleInput
     var moduleOutput: ModuleOutput?
     
-    weak var view: ___VARIABLE_productName___PageViewProtocol!
+    weak var view: ___VARIABLE_productName___ViewProtocol!
 
     init(dependencies: Dependencies, data: ModuleInput) {
         self.dp = dependencies
@@ -36,8 +34,8 @@ class ___VARIABLE_productName___PageViewModel {
     }
 }
 
-// MARK: - ___VARIABLE_productName___PageViewControllerOutput
-extension ___VARIABLE_productName___PageViewModel: ___VARIABLE_productName___PageViewModelProtocol {
+// MARK: - ___VARIABLE_productName___ViewControllerOutput
+extension ___VARIABLE_productName___ViewModel: ___VARIABLE_productName___ViewModelProtocol {
     
     func change(lifeCycle: LifeCycle) {
         switch lifeCycle {

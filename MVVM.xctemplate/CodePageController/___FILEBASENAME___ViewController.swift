@@ -1,21 +1,12 @@
-import POPDataSource
+import UIKit
 
-class ___VARIABLE_productName___TableViewController: UIViewController {
+class ___VARIABLE_productName___ViewController: UIViewController {
 
-    lazy var customView: ___VARIABLE_productName___TableView = {
-        let customView = ___VARIABLE_productName___TableView(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
-        return customView
+    lazy var customView: ___VARIABLE_productName___View = {
+        ___VARIABLE_productName___View()
     }()
     
-    var viewModel: ___VARIABLE_productName___TableViewModelProtocol!
-    
-    private var dataSourceShim: TableViewDataSourceShim? = nil {
-        didSet {
-            customView.tableView.dataSource = dataSourceShim
-            customView.tableView.delegate = dataSourceShim
-            customView.tableView.reloadData()
-        }
-    }
+    var viewModel: ___VARIABLE_productName___ViewModelProtocol!
     
     // MARK: - View lifecycle
 
@@ -60,14 +51,10 @@ class ___VARIABLE_productName___TableViewController: UIViewController {
     }
 }
 
-// MARK: - Private ___VARIABLE_productName___TableViewModelOutput
-extension ___VARIABLE_productName___TableViewController: ___VARIABLE_productName___TableViewProtocol {
+// MARK: - Private ___VARIABLE_productName___ViewModelOutput
+extension ___VARIABLE_productName___ViewController: ___VARIABLE_productName___ViewProtocol {
 
     func dataDidUpdate() {
-        customView.tableView.reloadData()
-    }
-    
-    func configureDataSource(_ dataSources: [TableViewDataSource]) {
-        dataSourceShim = TableViewDataSourceShim(ComposedDataSource(dataSources))
+
     }
 }

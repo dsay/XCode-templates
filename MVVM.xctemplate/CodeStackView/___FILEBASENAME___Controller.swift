@@ -1,13 +1,12 @@
 import UIKit
 
-class ___VARIABLE_productName___PageViewController: UIViewController {
+class ___VARIABLE_productName___Controller: UIViewController {
 
-    lazy var customView: ___VARIABLE_productName___PageView = {
-        let customView = ___VARIABLE_productName___PageView(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
-        return customView
+    lazy var customView: ___VARIABLE_productName___View = {
+        ___VARIABLE_productName___View()
     }()
     
-    var viewModel: ___VARIABLE_productName___PageViewModelProtocol!
+    var viewModel: ___VARIABLE_productName___ViewModelProtocol!
     
     // MARK: - View lifecycle
 
@@ -52,9 +51,13 @@ class ___VARIABLE_productName___PageViewController: UIViewController {
     }
 }
 
-// MARK: - Private ___VARIABLE_productName___PageViewModelOutput
-extension ___VARIABLE_productName___PageViewController: ___VARIABLE_productName___PageViewProtocol {
+// MARK: - Private ___VARIABLE_productName___ViewModelOutput
+extension ___VARIABLE_productName___Controller: ___VARIABLE_productName___ViewProtocol {
 
+    func configure(_ views: [UIView]) {
+        customView.vertical.addToVerticalStack(views)
+    }
+    
     func dataDidUpdate() {
 
     }

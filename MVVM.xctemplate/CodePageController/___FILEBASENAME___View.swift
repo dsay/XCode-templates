@@ -1,13 +1,13 @@
 import UIKit
 
-class ___VARIABLE_productName___PageView: UIView {
+class ___VARIABLE_productName___View: UIView {
 
     @Layout var segmentControl = UISegmentedControl()
     @Layout var container = UIView()
 
     let pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
     
-    override init(frame: CGRect = CGRect.zero) {
+    override init(frame: CGRect = CGRect(x: 0, y: 0, width: 320, height: 480)) {
         super.init(frame: frame)
         configureView()
         addSubviews()

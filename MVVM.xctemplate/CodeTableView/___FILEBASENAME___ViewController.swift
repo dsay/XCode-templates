@@ -1,13 +1,20 @@
-import UIKit
+import POPDataSource
 
-class ___VARIABLE_productName___StackController: UIViewController {
+class ___VARIABLE_productName___ViewController: UIViewController {
 
-    lazy var customView: ___VARIABLE_productName___StackView = {
-        let customView = ___VARIABLE_productName___StackView(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
-        return customView
+    lazy var customView: ___VARIABLE_productName___View = {
+        ___VARIABLE_productName___View()
     }()
     
-    var viewModel: ___VARIABLE_productName___StackViewModelProtocol!
+    var viewModel: ___VARIABLE_productName___ViewModelProtocol!
+    
+    private var dataSourceShim: TableViewDataSourceShim? {
+        didSet {
+            customView.tableView.dataSource = dataSourceShim
+            customView.tableView.delegate = dataSourceShim
+            customView.tableView.reloadData()
+        }
+    }
     
     // MARK: - View lifecycle
 
@@ -52,14 +59,14 @@ class ___VARIABLE_productName___StackController: UIViewController {
     }
 }
 
-// MARK: - Private ___VARIABLE_productName___StackViewModelOutput
-extension ___VARIABLE_productName___StackController: ___VARIABLE_productName___StackViewProtocol {
+// MARK: - Private ___VARIABLE_productName___ViewModelOutput
+extension ___VARIABLE_productName___ViewController: ___VARIABLE_productName___ViewProtocol {
 
-    func configure(_ views: [UIView]) {
-        customView.vertical.addToVerticalStack(views)
+    func dataDidUpdate() {
+        customView.tableView.reloadData()
     }
     
-    func dataDidUpdate() {
-
+    func configureDataSource(_ dataSources: [TableViewDataSource]) {
+        dataSourceShim = TableViewDataSourceShim(ComposedDataSource(dataSources))
     }
 }

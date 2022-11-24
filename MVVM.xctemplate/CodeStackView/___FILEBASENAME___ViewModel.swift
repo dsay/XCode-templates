@@ -1,25 +1,23 @@
 import UIKit
 
-protocol ___VARIABLE_productName___StackViewProtocol: ViewModelOutput {
+protocol ___VARIABLE_productName___ViewProtocol: ViewModelOutput {
 
     func configure(_ views: [UIView])
     func dataDidUpdate()
 }
 
-protocol ___VARIABLE_productName___StackViewModelProtocol: ViewControllerOutput {
+protocol ___VARIABLE_productName___ViewModelProtocol: ViewControllerOutput {
 
 }
 
-class ___VARIABLE_productName___StackViewModel {
-
-    struct Dependencies { }
+class ___VARIABLE_productName___ViewModel {
 
     let dp: Dependencies
     
     let moduleInput: ModuleInput
     var moduleOutput: ModuleOutput?
     
-    weak var view: ___VARIABLE_productName___StackViewProtocol!
+    weak var view: ___VARIABLE_productName___ViewProtocol!
 
     init(dependencies: Dependencies, data: ModuleInput) {
         self.dp = dependencies
@@ -39,8 +37,8 @@ class ___VARIABLE_productName___StackViewModel {
     }
 }
 
-// MARK: - ___VARIABLE_productName___StackViewControllerOutput
-extension ___VARIABLE_productName___StackViewModel: ___VARIABLE_productName___StackViewModelProtocol {
+// MARK: - ___VARIABLE_productName___ViewControllerOutput
+extension ___VARIABLE_productName___ViewModel: ___VARIABLE_productName___ViewModelProtocol {
     
     func change(lifeCycle: LifeCycle) {
         switch lifeCycle {

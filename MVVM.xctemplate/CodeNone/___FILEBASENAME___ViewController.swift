@@ -2,10 +2,7 @@ import UIKit
 
 class ___VARIABLE_productName___ViewController: UIViewController {
 
-    lazy var customView: ___VARIABLE_productName___View = {
-        let customView = ___VARIABLE_productName___View(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
-        return customView
-    }()
+    lazy var customView: ___VARIABLE_productName___View = { ___VARIABLE_productName___View() }()
     
     var viewModel: ___VARIABLE_productName___ViewModelProtocol!
     

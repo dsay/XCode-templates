@@ -1,10 +1,10 @@
 import UIKit
 
-class ___VARIABLE_productName___TableView: UIView {
+class ___VARIABLE_productName___View: UIView {
 
     @Layout var tableView = UITableView()
     
-    override init(frame: CGRect = CGRect.zero) {
+    override init(frame: CGRect = CGRect(x: 0, y: 0, width: 320, height: 480)) {
         super.init(frame: frame)
         configureView()
         addSubviews()

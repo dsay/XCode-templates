@@ -1,8 +1,28 @@
 import UIKit
 
-class ___VARIABLE_productName___Configurator {
+extension ___VARIABLE_productName___ViewModel {
 
-    class func configure(data: ___VARIABLE_productName___ViewModel.ModuleInput = ___VARIABLE_productName___ViewModel.ModuleInput(),
+    struct Dependencies {
+
+    }
+
+    struct ModuleInput {
+
+    }
+
+    struct ModuleOutput {
+        enum Action {
+
+        }
+        
+        let action: (Action) -> Void
+    }
+
+}
+
+struct ___VARIABLE_productName___ {
+
+    static func configure(data: ___VARIABLE_productName___ViewModel.ModuleInput = ___VARIABLE_productName___ViewModel.ModuleInput(),
                          output: ___VARIABLE_productName___ViewModel.ModuleOutput? = nil) -> UIViewController
     {
         let viewController = ___VARIABLE_productName___ViewController()
@@ -15,7 +35,7 @@ class ___VARIABLE_productName___Configurator {
         return viewController
     }
     
-    private class func createDependencies() -> ___VARIABLE_productName___ViewModel.Dependencies {
+    private static func createDependencies() -> ___VARIABLE_productName___ViewModel.Dependencies {
         return ___VARIABLE_productName___ViewModel.Dependencies()
     }
 }

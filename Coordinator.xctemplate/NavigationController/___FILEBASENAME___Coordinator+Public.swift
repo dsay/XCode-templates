@@ -26,7 +26,7 @@ extension ___VARIABLE_productName___Coordinator {
     static func configure(with container: UINavigationController,
                           deepLinkContainer: DeepLinkContainer,
                           input: Input = Input(),
-                          output: Output? = nil) -> NavigationCoordinator
+                          output: Output? = nil) -> ___VARIABLE_productName___Coordinator
     {
         ___VARIABLE_productName___Coordinator(with: container, .init(with: dependencies(), input, output), deepLinkContainer)
     }

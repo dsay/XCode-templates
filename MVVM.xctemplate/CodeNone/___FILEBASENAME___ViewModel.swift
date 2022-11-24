@@ -11,8 +11,6 @@ protocol ___VARIABLE_productName___ViewModelProtocol: ViewControllerOutput {
 
 class ___VARIABLE_productName___ViewModel {
 
-    struct Dependencies { }
-
     let dp: Dependencies
     
     let moduleInput: ModuleInput
