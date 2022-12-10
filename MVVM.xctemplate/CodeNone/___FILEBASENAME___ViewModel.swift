@@ -1,49 +1,37 @@
 import Foundation
 
-protocol ___VARIABLE_productName___ViewProtocol: ViewModelOutput {
+protocol ___VARIABLE_productName___ViewControllerProtocol: ViewControllerProtocol{
 
     func dataDidUpdate()
 }
 
-protocol ___VARIABLE_productName___ViewModelProtocol: ViewControllerOutput {
+protocol ___VARIABLE_productName___ViewModelProtocol: ViewModelProtocol {
 
 }
 
-class ___VARIABLE_productName___ViewModel {
-
-    let dp: Dependencies
+extension ___VARIABLE_productName___ {
     
-    let moduleInput: ModuleInput
-    var moduleOutput: ModuleOutput?
-    
-    weak var view: ___VARIABLE_productName___ViewProtocol!
-
-    init(dependencies: Dependencies, data: ModuleInput) {
-        self.dp = dependencies
-        self.moduleInput = data
-    }
-    
-    // MARK: - Private
-
-    func start() {
+    final class ViewModel: ___VARIABLE_productName___ViewModelProtocol {
         
-    }
+        var dp: Dependencies!
+        
+        var input: Input!
+        var output: Output?
+        
+        weak var view: ___VARIABLE_productName___ViewControllerProtocol?
 
-    func updateData() {
-        view.dataDidUpdate()
-    }
-}
+        // MARK: - lifecycle
 
-// MARK: - ___VARIABLE_productName___ViewControllerOutput
-extension ___VARIABLE_productName___ViewModel: ___VARIABLE_productName___ViewModelProtocol {
-    
-    func change(lifeCycle: LifeCycle) {
-        switch lifeCycle {
-        case .didLoad:
-            start()
-        case .willAppear:
-            updateData()
-        default: break
+        func start() {
+            
         }
+        
+        func updateData() {
+            view?.dataDidUpdate()
+        }
+        
+        // MARK: - Private
+        
+        // MARK: - ViewModelProtocol
     }
 }

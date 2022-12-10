@@ -1,41 +1,34 @@
 import UIKit
 
-extension ___VARIABLE_productName___ViewModel {
-
+enum ___VARIABLE_productName___ {
+    
     struct Dependencies {
 
     }
 
-    struct ModuleInput {
+    struct Input {
 
     }
 
-    struct ModuleOutput {
+    struct Output {
         enum Action {
 
         }
         
         let action: (Action) -> Void
     }
-
-}
-
-struct ___VARIABLE_productName___ {
-
-    static func configure(data: ___VARIABLE_productName___ViewModel.ModuleInput = ___VARIABLE_productName___ViewModel.ModuleInput(),
-                         output: ___VARIABLE_productName___ViewModel.ModuleOutput? = nil) -> UIViewController
-    {
-        let viewController = ___VARIABLE_productName___ViewController()
-        let viewModel = ___VARIABLE_productName___ViewModel(dependencies: createDependencies(), data: data)
-            
+    
+    static func configure(data: Input = Input(), output: Output? = nil) -> UIViewController {
+        let viewController = ViewController()
+        let viewModel = ViewModel(with: createDependencies(), data, output)
+        
         viewController.viewModel = viewModel
         viewModel.view = viewController
-        viewModel.moduleOutput = output
-            
+        
         return viewController
     }
     
-    private static func createDependencies() -> ___VARIABLE_productName___ViewModel.Dependencies {
-        return ___VARIABLE_productName___ViewModel.Dependencies()
+    private static func createDependencies() -> Dependencies {
+        Dependencies()
     }
 }

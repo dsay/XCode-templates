@@ -36,11 +36,9 @@
 			<key>Type</key>
 			<string>popup</string>
 			<key>Default</key>
-			<string>Storyboard</string>
+			<string>Code</string>
 			<key>Values</key>
 			<array>
-				<string>Storyboard</string>
-				<string>XIB file</string>
 				<string>Code</string>
 			</array>
 		</dict>
