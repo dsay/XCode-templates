@@ -1,62 +1,63 @@
 import Coordinator
 import UIKit
 
-final class ___VARIABLE_productName___Coordinator: WindowCoordinator, ControllerContainer {
+extension ___VARIABLE_productName___ {
     
-    var controller: Controller!
-    
-    // MARK: - Life cycle
-    
-    override func start() {
-        controller.configure() { [weak self] action in
-            switch action {
-            case .presentAuth:
-                self?.presentAuth()
+    final class Launch1Coordinator: WindowCoordinator<Controller> {
                 
-            case .presentMain:
-                self?.presentMain()
-                
-            case .presentLaunch:
-                self?.presentLaunch()
-                
-            case .recommendedUpdate(let url):
-                self?.recommendedUpdate(url)
-                
-            case .requiredUpdate(let url):
-                self?.requiredUpdate(url)
+        // MARK: - Life cycle
+        
+        override func start() {
+            controller.configure() { [weak self] action in
+                switch action {
+                case .presentAuth:
+                    self?.presentAuth()
+                    
+                case .presentMain:
+                    self?.presentMain()
+                    
+                case .presentLaunch:
+                    self?.presentLaunch()
+                    
+                case .recommendedUpdate(let url):
+                    self?.recommendedUpdate(url)
+                    
+                case .requiredUpdate(let url):
+                    self?.requiredUpdate(url)
+                }
             }
         }
-    }
-    
-    override func open(deepLink: DeepLink?) -> Bool {
-        return false
-    }
-    
-    // MARK: - actions
-    
-    func enterForeground() {
-        controller.enterForeground()
-    }
-    
-    // MARK: - private methods
-    
-    private func presentLaunch() {
-    
-    }
-    
-    private func presentAuth() {
         
-    }
-    
-    private func presentMain() {
+        override func open(deepLink: DeepLink?) -> Bool {
+            return false
+        }
         
-    }
-    
-    private func requiredUpdate(_ storeUrl: String) {
-        // Show required update Alert
-    }
-    
-    private func recommendedUpdate(_ storeUrl: String) {
-        // Show recommended update Alert
+        // MARK: - actions
+        
+        func enterForeground() {
+            controller.enterForeground()
+        }
+        
+        // MARK: - private methods
+        
+        private func presentLaunch() {
+            
+        }
+        
+        private func presentAuth() {
+            
+        }
+        
+        private func presentMain() {
+            
+        }
+        
+        private func requiredUpdate(_ storeUrl: String) {
+            // Show required update Alert
+        }
+        
+        private func recommendedUpdate(_ storeUrl: String) {
+            // Show recommended update Alert
+        }
     }
 }

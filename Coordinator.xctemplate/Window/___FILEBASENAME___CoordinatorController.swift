@@ -1,6 +1,6 @@
 import Coordinator
 
-extension ___VARIABLE_productName___Coordinator {
+extension ___VARIABLE_productName___ {
     
     enum Action {
         case presentAuth

@@ -1,7 +1,7 @@
 import Coordinator
 import UIKit
 
-extension ___VARIABLE_productName___Coordinator {
+enum ___VARIABLE_productName___ {
     
     struct Dependencies {
 
@@ -26,8 +26,10 @@ extension ___VARIABLE_productName___Coordinator {
     static func configure(with container: UITabBarController,
                           deepLinkContainer: DeepLinkContainer,
                           input: Input = Input(),
-                          output: Output? = nil) -> ___VARIABLE_productName___Coordinator
+                          output: Output? = nil) -> Coordinator
     {
-        ___VARIABLE_productName___Coordinator(with: container, .init(with: dependencies(), input, output), deepLinkContainer)
+        let controller = Controller(with: dependencies(), input, output)
+        let coordinator = Coordinator(with: container, controller, deepLinkContainer)
+        return coordinator
     }
 }
