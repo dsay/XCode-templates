@@ -3,7 +3,7 @@ import UIKit
 
 extension ___VARIABLE_productName___ {
     
-    final class Launch1Coordinator: WindowCoordinator<Controller> {
+    final class Coordinator: WindowCoordinator<Controller> {
                 
         // MARK: - Life cycle
         
