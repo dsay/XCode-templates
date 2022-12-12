@@ -1,5 +1,13 @@
 import Coordinator
 
+protocol AppCoordinatorProtocol: AnyObject {
+    func presentAuth()
+    func presentMain()
+    func presentLaunch()
+    func recommendedUpdate(_ storeUrl: String)
+    func requiredUpdate(_ storeUrl: String)
+}
+
 extension ___VARIABLE_productName___ {
     
     final class Controller: CoordinatorController {
@@ -9,9 +17,12 @@ extension ___VARIABLE_productName___ {
         
         var dependencies: Dependencies!
         
+        weak var coordinator: AppCoordinatorProtocol?
+
         // MARK: - Life cycle
-        func configure(_ action: (Action) -> Void) {
-            action(.presentLaunch)
+        func configure() {
+            coordinator?.presentLaunch()
+            
             // Chech force update status .recommendedUpdate or .requiredUpdate
             // then
             // Check Autorisation status .presentAuth or .presentMain

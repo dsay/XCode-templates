@@ -3,61 +3,47 @@ import UIKit
 
 extension ___VARIABLE_productName___ {
     
-    final class Coordinator: WindowCoordinator<Controller> {
-                
+    final class Coordinator: WindowCoordinator<Controller>, AppCoordinatorProtocol {
+        
         // MARK: - Life cycle
         
         override func start() {
-            controller.configure() { [weak self] action in
-                switch action {
-                case .presentAuth:
-                    self?.presentAuth()
-                    
-                case .presentMain:
-                    self?.presentMain()
-                    
-                case .presentLaunch:
-                    self?.presentLaunch()
-                    
-                case .recommendedUpdate(let url):
-                    self?.recommendedUpdate(url)
-                    
-                case .requiredUpdate(let url):
-                    self?.requiredUpdate(url)
-                }
-            }
+            controller.coordinator = self
+            controller.configure()
         }
         
         override func open(deepLink: DeepLink?) -> Bool {
             return false
         }
         
-        // MARK: - actions
+        // MARK: - CoordinatorProtocol actions
         
         func enterForeground() {
             controller.enterForeground()
         }
         
-        // MARK: - private methods
-        
-        private func presentLaunch() {
+        func presentLaunch() {
             
         }
         
-        private func presentAuth() {
+        func presentAuth() {
             
         }
         
-        private func presentMain() {
+        func presentMain() {
             
         }
         
-        private func requiredUpdate(_ storeUrl: String) {
-            // Show required update Alert
+        func presentEnterPinCode() {
+            
         }
         
-        private func recommendedUpdate(_ storeUrl: String) {
-            // Show recommended update Alert
+        func requiredUpdate(_ storeUrl: String) {
+            
+        }
+        
+        func recommendedUpdate(_ storeUrl: String) {
+            
         }
     }
 }
