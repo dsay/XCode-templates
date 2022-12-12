@@ -13,7 +13,11 @@ enum ___VARIABLE_productName___ {
     
     struct Output {
         enum Action {
-            
+            case presentAuth
+            case presentMain
+            case presentActivation
+            case recommendedUpdate(String)
+            case requiredUpdate(String)
         }
         
         let action: (Action) -> Void

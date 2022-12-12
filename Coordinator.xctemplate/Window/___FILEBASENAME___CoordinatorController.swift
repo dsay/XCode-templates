@@ -2,14 +2,6 @@ import Coordinator
 
 extension ___VARIABLE_productName___ {
     
-    enum Action {
-        case presentAuth
-        case presentMain
-        case presentLaunch
-        case recommendedUpdate(String)
-        case requiredUpdate(String)
-    }
-    
     final class Controller: CoordinatorController {
         
         var input: Input!
