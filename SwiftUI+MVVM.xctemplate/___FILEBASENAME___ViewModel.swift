@@ -1,34 +1,30 @@
 import Foundation
 import Combine
 
-protocol ___VARIABLE_productName:identifier___ViewModel: MVVMViewModel {
-    
-}
-
 extension ___VARIABLE_productName:identifier___ {
     
-    final class ViewModel: ___VARIABLE_productName:identifier___ViewModel {
+    final class ViewModel: MVVMViewModel {
         
         var input: Input!
         var output: Output?
         
         var dependencies: Dependencies!
 
-        var isLoading: Bool = false
-        var error: Error?
+        @Published var isLoading: Bool = false
+        @Published var error: Error?
     
-        fileprivate var cancellables = Set<AnyCancellable>()
-
         // MARK: - Life cycle
 
         func configure() {
 
         }
         
-        // MARK: - Private methods
+        func start() {
 
+        }
+        
+        // MARK: - Private methods
         
         // MARK: - Actions
-
     }
 }

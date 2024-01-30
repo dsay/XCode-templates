@@ -2,14 +2,20 @@ import SwiftUI
 
 extension ___VARIABLE_productName:identifier___ {
     
-    struct View<ViewModel: ___VARIABLE_productName:identifier___ViewModel>: SwiftUI.View, MVVMView {
+    struct View: SwiftUI.View, MVVMView {
         
         @StateObject var viewModel: ViewModel
         
         var body: some SwiftUI.View {
-            Text("Hello!!!")
-               .modifyError(for: viewModel)
-               .modifyProgress(for: viewModel)
+            ScrollView {
+                VStack(spacing: 10) {
+                    
+                }
+                .modifyError(for: viewModel)
+                .modifyProgress(for: viewModel)
+            }
+            .clipped()
+            .onAppear(perform: viewModel.start)
         }
     }
 }

@@ -9,7 +9,9 @@ extension ___VARIABLE_productName:identifier___ {
     
     struct Output {
         
-        enum Action {}
+        enum Action {
+            
+        }
         
         let action: (Action) -> Void
     }
@@ -17,11 +19,11 @@ extension ___VARIABLE_productName:identifier___ {
 
 enum ___VARIABLE_productName:identifier___: MVVM {
 
-    static func dependencies(_ injector: DependencyInjector) -> Dependencies {
-        Dependencies()
+    static var dependencies: Dependencies {
+        .init()
     }
     
-    static func build(injector: DependencyInjector, input: Input = Input(), output: Output? = nil) -> some SwiftUI.View {
-        View(viewModel: ViewModel(with: dependencies(injector), input, output))
+    static func build(input: Input = Input(), output: Output? = nil) -> some SwiftUI.View {
+        View(viewModel: .init(with: dependencies, input, output))
     }
 }
