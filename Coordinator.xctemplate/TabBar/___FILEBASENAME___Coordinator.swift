@@ -1,35 +1,26 @@
-import Coordinator
 import UIKit
+import Coordinator
 
-final class ___VARIABLE_productName___Coordinator: TabBarCoordinator, ControllerContainer {
+final class ___VARIABLE_productName___Coordinator: TabBarCoordinator, ___VARIABLE_productName___CoordinatorControllerOutput {
     
     var controller: Controller!
     
     // MARK: - Life cycle
     
     override func start() {
-        controller.activity = container
-        controller.configure()
+        controller.start()
         
-        let tabs = configureTabs()
+        let tabs = [homeTab()]
         set(tabs, animated: false)
-    }
-    
-    override func open(deepLink: DeepLink?) -> Bool {
-        return false
     }
     
     // MARK: - actions
 
     // MARK: - private methods
     
-    private func configureTabs() -> [UIViewController] {
-        [oneTab()].map({ $0.container })
-    }
-    
-    private func oneTab() -> NavigationCoordinator {
+    private func homeTab() -> NavigationCoordinator {
         // let coordinator = ...
-        // coordinator.configure(for: .<TabBarItem>
+        // coordinator.container.configure(for: .<TabBarItem>
         // returt coordinator
         fatalError()
     }

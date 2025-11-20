@@ -1,15 +1,20 @@
+import Foundation
 import Coordinator
 
-extension ___VARIABLE_productName___Coordinator {
+protocol ___VARIABLE_productName___CoordinatorControllerOutput: CoordinatorControllerOutput {
     
-    final class Controller: CoordinatorController {
+}
+
+extension TestCoordinator {
+    
+    final class Controller: NSObject {
         
         var input: Input!
         var output: Output?
         
         var dependencies: Dependencies!
 
-        weak var activity: ActivityObserver?
+        weak var coordinator: ___VARIABLE_productName___CoordinatorControllerOutput?
         
         // MARK: - Life cycle
         func configure() {

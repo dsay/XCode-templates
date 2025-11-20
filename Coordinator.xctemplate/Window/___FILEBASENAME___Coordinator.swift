@@ -1,62 +1,45 @@
-import Coordinator
 import UIKit
+import Coordinator
 
-final class ___VARIABLE_productName___Coordinator: WindowCoordinator, ControllerContainer {
+final class ___VARIABLE_productName___Coordinator: WindowCoordinator, ___VARIABLE_productName___CoordinatorControllerOutput {
     
     var controller: Controller!
     
     // MARK: - Life cycle
     
     override func start() {
-        controller.configure() { [weak self] action in
-            switch action {
-            case .presentAuth:
-                self?.presentAuth()
-                
-            case .presentMain:
-                self?.presentMain()
-                
-            case .presentLaunch:
-                self?.presentLaunch()
-                
-            case .recommendedUpdate(let url):
-                self?.recommendedUpdate(url)
-                
-            case .requiredUpdate(let url):
-                self?.requiredUpdate(url)
-            }
-        }
-    }
-    
-    override func open(deepLink: DeepLink?) -> Bool {
-        return false
+        controller.start()
     }
     
     // MARK: - actions
     
-    func enterForeground() {
-        controller.enterForeground()
+    func appEnterToForeground() {
+        controller.enterToForeground()
+    }
+    
+    func appEnterToBackground() {
+        controller.enterToBackground()
     }
     
     // MARK: - private methods
     
-    private func presentLaunch() {
+    func presentLaunch() {
     
     }
     
-    private func presentAuth() {
+    func presentAuth() {
         
     }
     
-    private func presentMain() {
+    func presentMain() {
         
     }
     
-    private func requiredUpdate(_ storeUrl: String) {
+    func requiredUpdate(_ storeUrl: String) {
         // Show required update Alert
     }
     
-    private func recommendedUpdate(_ storeUrl: String) {
+    func recommendedUpdate(_ storeUrl: String) {
         // Show recommended update Alert
     }
 }

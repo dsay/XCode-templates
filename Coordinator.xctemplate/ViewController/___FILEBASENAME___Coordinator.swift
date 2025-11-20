@@ -1,19 +1,14 @@
-import Coordinator
 import UIKit
+import Coordinator
 
-final class ___VARIABLE_productName___Coordinator: ViewControllerCoordinator, ControllerContainer {
+final class ___VARIABLE_productName___Coordinator: ViewControllerCoordinator, ___VARIABLE_productName___CoordinatorControllerOutput {
     
     var controller: Controller!
     
     // MARK: - Life cycle
     
     override func start() {
-        controller.activity = container
         controller.configure()
-    }
-    
-    override func open(deepLink: DeepLink?) -> Bool {
-        return false
     }
     
     // MARK: - actions

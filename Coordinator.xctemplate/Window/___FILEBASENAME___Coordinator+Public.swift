@@ -1,5 +1,5 @@
-import Coordinator
 import UIKit
+import Coordinator
 
 extension ___VARIABLE_productName___Coordinator {
     
@@ -13,7 +13,6 @@ extension ___VARIABLE_productName___Coordinator {
     
     struct Output {
         enum Action {
-            
         }
         
         let action: (Action) -> Void
@@ -24,10 +23,15 @@ extension ___VARIABLE_productName___Coordinator {
     }
     
     static func configure(with container: UIWindow,
-                          deepLinkContainer: DeepLinkContainer,
                           input: Input = Input(),
-                          output: Output? = nil) -> ___VARIABLE_productName___Coordinator
-    {
-        ___VARIABLE_productName___Coordinator(with: container, .init(with: dependencies(), input, output), deepLinkContainer)
+                          output: Output? = nil) -> ___VARIABLE_productName___Coordinator {
+        let coordinator = ___VARIABLE_productName___Coordinator(container: container)
+        let controller = ___VARIABLE_productName___Coordinator.Controller()
+        controller.input = input
+        controller.output = output
+        controller.dependencies = dependencies()
+        controller.coordinator = coordinator
+        coordinator.controller = controller
+        return coordinator
     }
 }
